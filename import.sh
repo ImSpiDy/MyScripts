@@ -30,4 +30,16 @@ else
 echo " Skipped data-kernel"
 fi
 
+read -p " Wanna import Exfat? ( y or n ): " ans3
+if [ $ans3 = "y" ]; then
+read -p " Linux Version is 4.4 or Below 4.4 ? ( y or n ): " ans4
+if [ $ans4 = "y" ]; then
+git subtree add --prefix=fs/exfat https://github.com/arter97/exfat-linux old
+else
+git subtree add --prefix=fs/exfat https://github.com/arter97/exfat-linux master
+fi
+else
+echo " Skipped Exfat Driver"
+fi
+
 echo "Done."
