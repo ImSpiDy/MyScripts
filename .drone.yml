@@ -1,0 +1,82 @@
+---
+clone:
+  depth: 1
+kind: pipeline
+name : Blu-old
+version: Old
+steps:
+ - name: Lets Go
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - bash build.sh --old
+
+---
+clone:
+  depth: 1
+kind: pipeline
+name : Blu-New
+version: New
+steps:
+ - name: Lets Go
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - bash build.sh --new
+
+---
+clone:
+  depth: 1
+kind: pipeline
+name : Blu-Qti
+version: Qti
+steps:
+ - name: Lets Go
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git apply QTI_HAPTICS.p
+     - bash build.sh --qti
+
+---
+clone:
+  depth: 1
+kind: pipeline
+name : Blu-Qti-12
+version: Qti-12
+steps:
+ - name: Lets Go
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git apply QTI_HAPTICS.p
+     - git apply a12.p
+     - bash build.sh --qti.12
