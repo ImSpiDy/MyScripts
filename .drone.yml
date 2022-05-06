@@ -1,0 +1,19 @@
+---
+clone:
+  depth: 1
+kind: pipeline
+name : OldCam
+version: XTREME-OLD
+steps:
+ - name: Xtreme
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - bash build.sh
