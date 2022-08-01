@@ -15,5 +15,5 @@ steps:
      ghtoken:
        from_secret: ghtoken
    commands:
-     - git clone -b hmp https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-Kernel_Beryllium-CLO x && cd x
      - bash build.sh
