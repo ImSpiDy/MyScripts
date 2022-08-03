@@ -2,8 +2,8 @@
 clone:
   depth: 1
 kind: pipeline
-name : Blu-old
-version: Old
+name : non_ext
+version: X2
 steps:
  - name: Lets Go
    image: panchajanya1999/archlinux:latest
@@ -16,4 +16,25 @@ steps:
        from_secret: ghtoken
    commands:
      - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-Kernel_Beryllium-CLO x && cd x
+     - git apply non_ext.p
      - bash build.sh
+     
+---
+clone:
+  depth: 1
+kind: pipeline
+name : sys_ext
+version: X2
+steps:
+ - name: Lets Go
+   image: panchajanya1999/archlinux:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+     ghtoken:
+       from_secret: ghtoken
+   commands:
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-Kernel_Beryllium-CLO x && cd x
+     - bash build.sh --ext
