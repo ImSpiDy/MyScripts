@@ -6,7 +6,7 @@ name : Blu-old
 version: Old
 steps:
  - name: Lets Go
-   image: panchajanya1999/archlinux:latest
+   image: jebaitedneko/kernel:latest
    environment:
      token:
        from_secret: token
@@ -26,7 +26,7 @@ name : Blu-New
 version: New
 steps:
  - name: Lets Go
-   image: panchajanya1999/archlinux:latest
+   image: jebaitedneko/kernel:latest
    environment:
      token:
        from_secret: token
@@ -46,7 +46,7 @@ name : Blu-Qti
 version: Qti
 steps:
  - name: Lets Go
-   image: panchajanya1999/archlinux:latest
+   image: jebaitedneko/kernel:latest
    environment:
      token:
        from_secret: token
@@ -67,7 +67,7 @@ name : Blu-Qti-12
 version: Qti-12
 steps:
  - name: Lets Go
-   image: panchajanya1999/archlinux:latest
+   image: jebaitedneko/kernel:latest
    environment:
      token:
        from_secret: token
