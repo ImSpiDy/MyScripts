@@ -15,7 +15,7 @@ steps:
      ghtoken:
        from_secret: ghtoken
    commands:
-     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/kernel_xiaomi_lavender x && cd x
      - bash build.sh --old
 
 ---
@@ -35,7 +35,7 @@ steps:
      ghtoken:
        from_secret: ghtoken
    commands:
-     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/kernel_xiaomi_lavender x && cd x
      - bash build.sh --new
 
 ---
@@ -55,7 +55,7 @@ steps:
      ghtoken:
        from_secret: ghtoken
    commands:
-     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/kernel_xiaomi_lavender x && cd x
      - git apply QTI_HAPTICS.p
      - bash build.sh --qti
 
@@ -76,7 +76,7 @@ steps:
      ghtoken:
        from_secret: ghtoken
    commands:
-     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/Nexus-blu-Kernel_lavender x && cd x
+     - git clone https://ImSpiDy:$ghtoken@github.com/ImSpiDy/kernel_xiaomi_lavender x && cd x
      - git apply QTI_HAPTICS.p
      - git apply a12.p
      - bash build.sh --qti.12
