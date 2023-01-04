@@ -1,0 +1,58 @@
+version: 2.1
+jobs:
+  oldcam:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
+           bash build.sh --old
+
+  newcam:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
+           bash build.sh --new
+
+  qti-old:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
+           bash build.sh --qti
+
+  a13-camfix:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
+           bash build.sh --cam
+
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - oldcam
+      - newcam
+      - qti-old
+      - a13-camfix
