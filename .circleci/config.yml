@@ -9,19 +9,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b X1 .
-           bash build.sh
-
-  oss:
-   docker:
-      - image: nexgang/ubuntu:latest
-   steps:
-      - run:
-          command: |
-           git config --global user.name "ImSpiDy"
-           git config --global user.email "SpiDy2713@gmail.com"
-           git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b X1-OSS .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b X2B .
            bash build.sh
 
 workflows:
@@ -29,4 +17,3 @@ workflows:
   cooking:
     jobs:
       - clo
-      - oss
