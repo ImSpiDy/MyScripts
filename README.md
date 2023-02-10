@@ -12,6 +12,3 @@ curl https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/techpack.sh -o tp 
 ```bash
 curl https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/wireguard.sh -o wg && bash wg
 ```
-
-### Credit
-[AkiraSuper](https://github.com/akirasup3r)
