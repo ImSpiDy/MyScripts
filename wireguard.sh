@@ -34,4 +34,6 @@ rm -rf "${kt_dir}"/wireguard*
 git add "${wg_dir}"
 git commit -sm "net: ${wg_type} wireguard-linux-compat ${ver}"
 
+rm -rf $kt_dir/wg
+
 echo "done"

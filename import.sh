@@ -3,6 +3,8 @@
 # Import or update qcacld-3.0, qca-wifi-host-cmn, fw-api , audio-kernel and data-kernel
 #
 
+kt_dir="$(pwd)"
+
 read -p "Please input the tag name: " tag
 
 read -p "Import qcacld-3.0, qca-wifi-host-cmn, fw-api? ( y or n ): "  ans
@@ -41,5 +43,7 @@ fi
 else
 echo " Skipped Exfat Driver"
 fi
+
+rm -rf $kt_dir/import
 
 echo "Done."
