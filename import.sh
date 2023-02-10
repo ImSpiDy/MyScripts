@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Import or update qcacld-3.0, qca-wifi-host-cmn, fw-api , audio-kernel and data-kernel
+# Import or update qcacld-3.0, qca-wifi-host-cmn, fw-api and exfat
 #
 
 kt_dir="$(pwd)"
@@ -16,20 +16,6 @@ git subtree add --prefix=drivers/staging/qca-wifi-host-cmn https://source.codeau
 git subtree add --prefix=drivers/staging/fw-api https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/fw-api $tag
 else
 echo " Skipped qcacld-3.0, qca-wifi-host-cmn, fw-api"
-fi
-
-read -p " Wanna import audio-kernel? ( y or n ): " ans1
-if [ $ans1 = "y" ]; then
-git subtree add --prefix=techpack/audio https://source.codeaurora.org/quic/la/platform/vendor/opensource/audio-kernel $tag
-else
-echo " Skipped audio-kernel"
-fi
-
-read -p " Wanna import data-kernel? ( y or n ): " ans2
-if [ $ans2 = "y" ]; then
-git subtree add --prefix=techpack/data https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/data-kernel $tag
-else
-echo " Skipped data-kernel"
 fi
 
 read -p " Wanna import Exfat? ( y or n ): " ans3
