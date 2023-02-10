@@ -22,6 +22,27 @@ else
 echo " Skipped data-kernel"
 fi
 
+read -p " Wanna import camera-kernel? ( y or n ): " ans3
+if [ $ans3 = "y" ]; then
+git subtree add --prefix=techpack/camera https://git.codelinaro.org/clo/la/platform/vendor/opensource/camera-kernel/ $tag
+else
+echo " Skipped camera-kernel"
+fi
+
+read -p " Wanna import display-drivers? ( y or n ): " ans4
+if [ $ans4 = "y" ]; then
+git subtree add --prefix=techpack/display https://git.codelinaro.org/clo/la/platform/vendor/opensource/display-drivers/ $tag
+else
+echo " Skipped display-drivers"
+fi
+
+read -p " Wanna import video-driver? ( y or n ): " ans5
+if [ $ans5 = "y" ]; then
+git subtree add --prefix=techpack/video https://git.codelinaro.org/clo/la/platform/vendor/opensource/video-driver/ $tag
+else
+echo " Skipped video-driver"
+fi
+
 rm -rf $kt_dir/import
 
 echo "Done."
