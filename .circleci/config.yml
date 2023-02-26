@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  compile:
+  sonix:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -15,4 +15,4 @@ workflows:
   version: 2.1
   cooking:
     jobs:
-      - compile
+      - sonix
