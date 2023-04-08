@@ -12,3 +12,9 @@ curl https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/techpack.sh -o tp 
 ```bash
 curl https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/wireguard.sh -o wg && bash wg
 ```
+
+### Upload file on Github / DevUpload
+
+```bash curl 
+curl https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/upload.sh -o up && bash up
+```
