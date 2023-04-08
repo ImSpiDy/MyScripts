@@ -63,7 +63,5 @@ else
     echo " Skipped video-driver"
 fi
 
-rm -rf $kt_dir/import
-
 echo "Done."
 
