@@ -17,3 +17,8 @@ bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/wireguar
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/upload.sh)
 ```
+
+### Download file with aria2c
+```bash
+bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/download.sh)
+```
