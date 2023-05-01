@@ -36,7 +36,7 @@ jobs:
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
            bash build.sh --qti
 
-  a13-camfix:
+  qti-camfix:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -55,4 +55,4 @@ workflows:
       - oldcam
       - newcam
       - qti-old
-      - a13-camfix
+      - qti-camfix
