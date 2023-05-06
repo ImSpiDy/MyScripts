@@ -22,3 +22,8 @@ bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/upload.s
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/download.sh)
 ```
+
+### Compile RoM with cache
+```bash
+bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/buildOS.sh)
+```
