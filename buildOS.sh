@@ -52,7 +52,15 @@ build () {
 mka bacon
 }
 
+upload () {
+cd out/target/product/lavender/
+[ -e *-eng*.zip ] && rm -rf *-eng*.zip
+[ -e *-ota-*.zip ] && rm -rf *-ota-*.zip
+[ -e *.zip ] && curl -T *.zip temp.sh
+}
+
 sync
 setup
 cache
 build
+upload
