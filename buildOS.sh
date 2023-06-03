@@ -1,5 +1,9 @@
 #!/bin/bash
 
+pkg () {
+apt install -y lld git-lfs
+}
+
 sync () {
 # Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 11.0 --git-lfs
@@ -59,6 +63,7 @@ cd out/target/product/lavender/
 [ -e *.zip ] && curl -T *.zip temp.sh
 }
 
+pkg
 sync
 setup
 cache
