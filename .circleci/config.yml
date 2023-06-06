@@ -12,7 +12,7 @@ jobs:
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
            bash build.sh --old
 
-  newcam:
+  qti-quo:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -22,7 +22,7 @@ jobs:
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
-           bash build.sh --new
+           bash build.sh --quo
 
   qti-old:
    docker:
@@ -53,6 +53,6 @@ workflows:
   cooking:
     jobs:
       - oldcam
-      - newcam
+      - qti-quo
       - qti-old
       - qti-camfix
