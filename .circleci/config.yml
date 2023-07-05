@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  clo:
+  Ext4:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -9,11 +9,50 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b X2B .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
            bash build.sh
+
+  EroFs:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           bash build.sh --EroFs
+
+  RF-Ext4:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           bash build.sh --DynExt4
+
+  RF-EroFs:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           bash build.sh --DynEroFs
 
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - clo
+      - Ext4
+      - EroFs
+      - RF-Ext4
+      - RF-EroFs
