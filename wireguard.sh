@@ -5,9 +5,19 @@
 #
 
 kt_dir="$(pwd)"
-wg_dir="${kt_dir}/net/wireguard"
+wg_dir_1="${kt_dir}/net/wireguard"
+wg_dir_2="${kt_dir}/drivers/net/wireguard"
 user_agent="WireGuard-AndroidROMBuild/0.3 ($(uname -a))"
 wireguard_url="https://git.zx2c4.com/wireguard-linux-compat/snapshot/wireguard-linux-compat"
+
+if [ -d "${wg_dir_1}" ]; then
+	wg_dir="${wg_dir_1}"
+fi
+if [ -d "${wg_dir_2}" ]; then
+	wg_dir="${wg_dir_2}"
+else
+	wg_dir="${wg_dir_1}"
+fi
 
 if [ -d "${wg_dir}" ]; then
         rm -rf "${wg_dir}"
