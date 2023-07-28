@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Test .
            bash build.sh
 
   EroFs:
@@ -21,7 +21,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Test .
            bash build.sh --EroFs
 
   RF-Ext4:
@@ -33,7 +33,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Test .
            bash build.sh --DynExt4
 
   RF-EroFs:
@@ -45,14 +45,11 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Test .
            bash build.sh --DynEroFs
 
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - Ext4
-      - EroFs
       - RF-Ext4
-      - RF-EroFs
