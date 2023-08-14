@@ -5,7 +5,7 @@
 
 echo " "
 echo -e "github release = 1 | devuploads = 2"
-echo -e "pixeldrain = 3"
+echo -e "pixeldrain = 3 | temp.sh = 4"
 read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
 
@@ -27,5 +27,10 @@ if [ $UP == 3 ]; then
 read -p "Please enter Pixel Drain key: " KEY
 echo -e "Started uploading file on PixelDrain..."
 curl -T $FP -u :$KEY https://pixeldrain.com/api/file/
+fi
+
+if [ $UP == 4 ]; then
+curl -T $FP temp.sh
+echo -e "Started uploading file on Temp..."
 fi
 
