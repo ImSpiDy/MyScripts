@@ -1,0 +1,18 @@
+name: NexusTweak
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: nexgang/ubuntu:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: My Scripts
+        run: bash reupload.sh
