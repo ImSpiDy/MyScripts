@@ -34,18 +34,6 @@ jobs:
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
-           bash build.sh --qti
-
-  qti-camfix:
-   docker:
-      - image: nexgang/ubuntu:latest
-   steps:
-      - run:
-          command: |
-           git config --global user.name "ImSpiDy"
-           git config --global user.email "SpiDy2713@gmail.com"
-           git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
            bash build.sh --cam
 
 workflows:
@@ -55,4 +43,3 @@ workflows:
       - oldcam
       - qti-quo
       - qti-old
-      - qti-camfix
