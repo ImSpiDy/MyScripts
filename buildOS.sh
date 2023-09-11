@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set Config
+git config --global user.name "ImSpiDy"
+git config --global user.email "SpiDy2713@gmail.com"
+
 pkg () {
 apt install -y lld git-lfs
 }
