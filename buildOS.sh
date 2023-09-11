@@ -10,13 +10,13 @@ apt install -y lld git-lfs
 
 sync () {
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --git-lfs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Colt-Enigma/platform_manifest -b minimal --git-lfs -g default,-mips,-darwin,-notdefault
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j24 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j12
 
 # tree
-git clone --depth=1 https://github.com/ImSpiDy/device_xiaomi_lavender device/xiaomi/lavender -b 13X
+git clone --depth=1 https://github.com/ImSpiDy/device_xiaomi_lavender device/xiaomi/lavender -b 13
 git clone --depth=1 https://github.com/wHo-EM-i/vendor_lavender vendor/xiaomi/lavender -b 13
 git clone --depth=1 https://github.com/wHo-EM-i/device_xiaomi_sdm660-common device/xiaomi/sdm660-common -b 13
 git clone --depth=1 https://github.com/wHo-EM-i/vendor_xiaomi_sdm660-common vendor/xiaomi/sdm660-common -b 13
@@ -55,7 +55,7 @@ curl https://github.com/wHo-EM-i/bionic/commit/6db6121472c45316bc6135f05da38227f
 
 setup () {
 . b*/e*.sh
-lunch derp_lavender-userdebug
+lunch colt_lavender-userdebug
 export TZ=Asia/Kolkata
 export SELINUX_IGNORE_NEVERALLOWS=true
 export RELAX_USES_LIBRARY_CHECK=true
@@ -66,9 +66,9 @@ export TARGET_USES_MINI_GAPPS=true
 }
 
 cache () {
-wget https://emy.ehteshammalik4.workers.dev/cirrus-user/Prashant-1695/lavender/crdroidandroid/11.0/ccache.tar.gz
-tar xf *.tar.gz
-rm -rf *.tar.gz
+#wget https://emy.ehteshammalik4.workers.dev/cirrus-user/Prashant-1695/lavender/crdroidandroid/11.0/ccache.tar.gz
+#tar xf *.tar.gz
+#rm -rf *.tar.gz
 export CCACHE_DIR=~/rr/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -78,7 +78,7 @@ ccache -z
 }
 
 build () {
-mka derp -j48
+mka colt -j48
 }
 
 upload () {
@@ -94,6 +94,6 @@ gh release upload --clobber ROM-REL *.zip --repo $REL
 pkg
 sync
 setup
-#cache
+cache
 build
 upload
