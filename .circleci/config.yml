@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   oldcam:
    docker:
-      - image: nexgang/ubuntu:latest
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
       - run:
           command: |
@@ -14,7 +14,7 @@ jobs:
 
   qti-quo:
    docker:
-      - image: nexgang/ubuntu:latest
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
       - run:
           command: |
@@ -26,7 +26,7 @@ jobs:
 
   qti-old:
    docker:
-      - image: nexgang/ubuntu:latest
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
       - run:
           command: |
