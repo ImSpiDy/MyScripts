@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  RF-Ext4-Lav:
+  lavender:
    docker:
       - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
@@ -12,7 +12,7 @@ jobs:
            git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
            bash build.sh --DynExt4
 
-  RF-Ext4-Tul:
+  tulip:
    docker:
       - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
@@ -23,10 +23,50 @@ jobs:
            git config --global color.ui false
            git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
            bash build.sh --DynExt4 --Tulip
+           
+           
+  wayne:
+   docker:
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           bash build.sh --DynExt4 --Wayne
+           
+  whyred:
+   docker:
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           bash build.sh --DynExt4 --Whyred
+           
+  platina:
+   docker:
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           bash build.sh --DynExt4 --Platina
 
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - RF-Ext4-Lav
-      - RF-Ext4-Tul
+      - lavender
+      - tulip
+      - wayne
+      - whyred
+      - platina
