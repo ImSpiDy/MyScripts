@@ -67,3 +67,4 @@ workflows:
     jobs:
       - lavender
       - tulip
+      - whyred
