@@ -55,3 +55,4 @@ workflows:
       - oldcam
       - qti-quo
       - qti-old
+      - qti-old-rdp
