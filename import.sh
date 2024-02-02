@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Modified AkiraSuper's Script
+# Modified AkiraSuper's Script by imspidy
 #
 # Import or update qcacld-3.0, qca-wifi-host-cmn, fw-api , audio-kernel and data-kernel
 #
