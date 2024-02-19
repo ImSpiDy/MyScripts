@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/snx -b snx .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh --DynExt4
 
   tulip:
@@ -21,7 +21,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/snx -b snx .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh --DynExt4 --Tulip
            
            
@@ -34,7 +34,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           git clone --depth=1 https://github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh --DynExt4 --Wayne
            
   whyred:
@@ -46,7 +46,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           git clone --depth=1 https://github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh --DynExt4 --Whyred
            
   platina:
@@ -58,7 +58,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b R1 .
+           git clone --depth=1 https://github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh --DynExt4 --Platina
 
 workflows:
@@ -66,3 +66,4 @@ workflows:
   cooking:
     jobs:
       - lavender
+      - tulip
