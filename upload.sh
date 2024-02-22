@@ -26,8 +26,11 @@ fi
 if [ $UP == 3 ]; then
 #read -p "Please enter Pixel Drain key: " KEY
 echo -e "Started uploading file on PixelDrain..."
+ls go-pd_1.4.0_linux_amd64.tar.gz || PixelDrain=1
+if [ "$PixelDrain" == "1" ]; then
 wget https://github.com/ManuelReschke/go-pd/releases/download/v1.4.0/go-pd_1.4.0_linux_amd64.tar.gz
 tar -xf go-pd*
+fi
 ./go-pd upload $FP
 fi
 
