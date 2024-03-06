@@ -66,4 +66,3 @@ workflows:
   cooking:
     jobs:
       - lavender
-      - tulip
