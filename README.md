@@ -1,11 +1,6 @@
-### Import or Update Drivers
+### Import or Update Kernel Drivers
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/import.sh)
-```
-
-### Import or Update Techpack Drivers
-```bash
-bash <(curl -s https://raw.githubusercontent.com/ImSpiDy/MyScripts/main/techpack.sh)
 ```
 
 ### Import or Update Wireguard
