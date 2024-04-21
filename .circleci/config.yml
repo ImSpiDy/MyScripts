@@ -1,58 +1,32 @@
 version: 2.1
 jobs:
-  Ext4:
+  lav:
    docker:
-      - image: nexgang/ubuntu:latest
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
       - run:
           command: |
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
            bash build.sh
 
-  EroFs:
+  lav-KSU:
    docker:
-      - image: nexgang/ubuntu:latest
+      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
    steps:
       - run:
           command: |
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
-           bash build.sh --EroFs
-
-  RF-Ext4:
-   docker:
-      - image: nexgang/ubuntu:latest
-   steps:
-      - run:
-          command: |
-           git config --global user.name "ImSpiDy"
-           git config --global user.email "SpiDy2713@gmail.com"
-           git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
-           bash build.sh --DynExt4
-
-  RF-EroFs:
-   docker:
-      - image: nexgang/ubuntu:latest
-   steps:
-      - run:
-          command: |
-           git config --global user.name "ImSpiDy"
-           git config --global user.email "SpiDy2713@gmail.com"
-           git config --global color.ui false
-           git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.19 -b 13-Retro .
-           bash build.sh --DynEroFs
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b snx .
+           bash build.sh --KSU
 
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - Ext4
-      - EroFs
-      - RF-Ext4
-      - RF-EroFs
+      - lav
+      - Lav-KSU
