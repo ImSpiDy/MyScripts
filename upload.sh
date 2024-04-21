@@ -4,8 +4,12 @@
 #
 
 echo " "
-echo -e "github release = 1 | devuploads = 2"
-echo -e "pixeldrain = 3 | temp.sh = 4"
+echo "[1] Github Release [gh auth login]
+[2] Devuploads [Key]
+[3] Temp.sh
+[4] Gofile
+[5] oshi.at
+"
 read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
 
@@ -24,18 +28,16 @@ bash <(curl -s https://devuploads.com/upload.sh) -f $FP -k $KEY
 fi
 
 if [ $UP == 3 ]; then
-#read -p "Please enter Pixel Drain key: " KEY
-echo -e "Started uploading file on PixelDrain..."
-ls go-pd || PixelDrain=1
-if [ "$PixelDrain" == "1" ]; then
-wget https://github.com/ManuelReschke/go-pd/releases/download/v1.4.0/go-pd_1.4.0_linux_amd64.tar.gz
-tar -xf go-pd*
-rm -rf go-pd_*.tar.gz
-fi
-./go-pd upload $FP
+echo -e "Started uploading file on Temp..."
+curl -T $FP temp.sh
 fi
 
 if [ $UP == 4 ]; then
-curl -T $FP temp.sh
-echo -e "Started uploading file on Temp..."
+echo -e "Started uploading file on Gofile..."
+curl -X POST 'https://store1.gofile.io/contents/uploadfile' -F "file=@${FP}" | grep -Po '(https://gofile.io/d/)[^"]*'
+fi
+
+if [ $UP == 5 ]; then
+echo -e "Started uploading file on Oshi.at..."
+curl -T $FP https://oshi.at
 fi
