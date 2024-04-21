@@ -4,8 +4,13 @@
 #
 
 echo " "
-echo -e "github release = 1 | devuploads = 2"
-echo -e "pixeldrain = 3 | temp.sh = 4"
+echo "[1] Github Release [gh auth login]
+[2] Devuploads [Key]
+[3] pixeldrain
+[4] Temp.sh
+[5] Gofile
+[6] oshi.at
+"
 read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
 
@@ -36,6 +41,17 @@ fi
 fi
 
 if [ $UP == 4 ]; then
-curl -T $FP temp.sh
 echo -e "Started uploading file on Temp..."
+curl -T $FP temp.sh
+fi
+
+if [ $UP == 5 ]; then
+echo -e "Started uploading file on Gofile..."
+SERVER=$(curl -X GET 'https://api.gofile.io/servers' | grep -Po '(store*)[^"]*' | tail -n 1)
+curl -X POST https://${SERVER}.gofile.io/contents/uploadfile -F "file=@$FP" | grep -Po '(https://gofile.io/d/)[^"]*'
+fi
+
+if [ $UP == 6 ]; then
+echo -e "Started uploading file on Oshi.at..."
+curl -T $FP https://oshi.at
 fi
