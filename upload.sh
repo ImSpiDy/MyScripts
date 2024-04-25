@@ -7,7 +7,7 @@ echo " "
 echo "[1] Github Release [gh auth login]
 [2] Devuploads [Key]
 [3] Temp.sh
-[4] Gofile
+[4] Gofile [Broken]
 [5] oshi.at
 "
 read -p "Please enter your number: " UP
@@ -33,6 +33,7 @@ curl -T $FP temp.sh
 fi
 
 if [ $UP == 4 ]; then
+exit
 echo -e "Started uploading file on Gofile..."
 curl -X POST 'https://store1.gofile.io/contents/uploadfile' -F "file=@${FP}" | grep -Po '(https://gofile.io/d/)[^"]*'
 fi
