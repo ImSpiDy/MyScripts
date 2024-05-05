@@ -21,9 +21,9 @@ fi
 
 if [ -d "${wg_dir}" ]; then
         rm -rf "${wg_dir}"
-	wg_type="merge"
+	wg_type="Merge"
 else
-	wg_type="import"
+	wg_type="Add"
 fi
 
 while read -r distro package version _; do
@@ -42,6 +42,6 @@ mkdir -p "${wg_dir}"
 cp -r "${kt_dir}"/wireguard/*/src/* "${wg_dir}"
 rm -rf "${kt_dir}"/wireguard*
 git add "${wg_dir}"
-git commit -sm "net: ${wg_type} wireguard-linux-compat ${ver}"
+git commit -sm "${wg_type} 'net/wireguard/' from wireguard-linux-compat ${ver}"
 
 echo "done"
