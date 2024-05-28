@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender -b snx .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/kernel_xiaomi_lavender-4.4 -b snx .
            bash build.sh --old
 workflows:
   version: 2.1
