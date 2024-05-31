@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   lavender:
    docker:
-      - image: ghcr.io/neutron-projects/docker-image:arch-neutron
+      - image: nexgang/ubuntu:latest
    steps:
       - run:
           command: |
