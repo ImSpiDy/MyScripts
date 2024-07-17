@@ -1,6 +1,19 @@
 version: 2.1
 jobs:
-  lavender:
+
+  lav-RDP:
+   docker:
+      - image: nexgang/ubuntu:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "ImSpiDy"
+           git config --global user.email "SpiDy2713@gmail.com"
+           git config --global color.ui false
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b snx-test .
+           bash build.sh null --RDP
+           
+  lav-RDP-KSU:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -16,4 +29,5 @@ workflows:
   version: 2.1
   cooking:
     jobs:
-      - lavender
+      - lav-RDP
+      - lav-RDP-KSU
