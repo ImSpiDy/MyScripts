@@ -6,10 +6,11 @@
 echo " "
 echo "[1] Github Release [gh auth login]
 [2] Devuploads [Key]
-[3] pixeldrain
+[3] pixeldrain [Key]
 [4] Temp.sh
 [5] Gofile
 [6] oshi.at
+[7] Sourceforge [Key]
 "
 read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
@@ -29,15 +30,9 @@ bash <(curl -s https://devuploads.com/upload.sh) -f $FP -k $KEY
 fi
 
 if [ $UP == 3 ]; then
-#read -p "Please enter Pixel Drain key: " KEY
+read -p "Please enter Pixel Drain key: " KEY
 echo -e "Started uploading file on PixelDrain..."
-ls go-pd || PixelDrain=1
-if [ "$PixelDrain" == "1" ]; then
-wget https://github.com/ManuelReschke/go-pd/releases/download/v1.4.0/go-pd_1.4.0_linux_amd64.tar.gz
-tar -xf go-pd*
-rm -rf go-pd_*.tar.gz
-fi
-./go-pd upload $FP
+curl -T $FP -u ":$KEY" https://pixeldrain.com/api/file/
 fi
 
 if [ $UP == 4 ]; then
@@ -54,4 +49,12 @@ fi
 if [ $UP == 6 ]; then
 echo -e "Started uploading file on Oshi.at..."
 curl -T $FP https://oshi.at
+fi
+
+if [ $UP == 7 ]; then
+echo -e "Started uploading file on Sourceforge..."
+read -p "Please enter Username: " USER
+read -p "Please enter upload location:
+Note: Path after /home/frs/project/" UPL
+scp $FP "$USER"@frs.sourceforge.net:/home/frs/project/$UPL
 fi
