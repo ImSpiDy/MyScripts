@@ -42,9 +42,9 @@ fi
 
 read -p "Wanna Import or update qcacld-3.0, qca-wifi-host-cmn, fw-api? [Y/N]: " WLAN
 if [ $WLAN = "y" -o $WLAN = "Y" ]; then
-	IMPORT drivers/staging/qca-wifi-host-cmn $CLO_REPO/qcom-opensource/wlan/qca-wifi-host-cmn $CLO_TAG
-	IMPORT drivers/staging/qcacld-3.0 $CLO_REPO/qcom-opensource/wlan/qcacld-3.0 $CLO_TAG
-	IMPORT drivers/staging/fw-api $CLO_REPO/qcom-opensource/wlan/fw-api $CLO_TAG
+	IMPORT drivers/staging/qca-wifi-host-cmn-legacy $CLO_REPO/qcom-opensource/wlan/qca-wifi-host-cmn $CLO_TAG
+	IMPORT drivers/staging/qcacld-3.0-legacy $CLO_REPO/qcom-opensource/wlan/qcacld-3.0 $CLO_TAG
+	IMPORT drivers/staging/fw-api-legacy $CLO_REPO/qcom-opensource/wlan/fw-api $CLO_TAG
 fi
 
 read -p "Wanna Import or update techpack drivers? [Y/N]: " TECH
