@@ -25,7 +25,7 @@ jobs:
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
            bash build.sh --KSU --RDP
 
-  lav-Legacy-KSU:
+  lav-NON-RDP-KSU:
    docker:
       - image: nexgang/ubuntu:latest
    steps:
@@ -35,7 +35,7 @@ jobs:
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
            git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
-           bash build.sh --KSU --R
+           bash build.sh --KSU null
 
 workflows:
   version: 2.1
@@ -43,3 +43,4 @@ workflows:
     jobs:
       - lav-RDP
       - lav-RDP-KSU
+      - lav-NON-RDP-KSU
