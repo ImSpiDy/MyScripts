@@ -10,7 +10,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
            bash build.sh null --RDP
 
   lav-RDP-KSU:
@@ -22,7 +22,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
            bash build.sh --KSU --RDP
 
   lav-ORDP-KSU:
@@ -34,7 +34,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
            bash build.sh --KSU --ORDP
 
   lav-NON-RDP-KSU:
@@ -46,7 +46,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
            bash build.sh --KSU null
 
   lav-KSU-legacy:
@@ -58,7 +58,7 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b android15-4.19-sdm660 .
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
            bash build.sh --KSU --R
 
 workflows:
@@ -66,3 +66,4 @@ workflows:
   cooking:
     jobs:
       - lav-RDP-KSU
+      - lav-KSU-legacy
