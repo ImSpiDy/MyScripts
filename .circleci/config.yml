@@ -22,8 +22,8 @@ jobs:
            git config --global user.name "ImSpiDy"
            git config --global user.email "SpiDy2713@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://ImSpiDy:$ght@github.com/ImSpiDy/sonix_kernel_sdm660 -b sonix .
-           bash build.sh --KSU --RDP
+           git clone --depth=1 https://ImSpiDy:$ght@github.com/reaPeR1010/4.19 -b main .
+           bash build_kramal.sh
 
   lav-ORDP-KSU:
    docker:
@@ -66,4 +66,3 @@ workflows:
   cooking:
     jobs:
       - lav-RDP-KSU
-      - lav-KSU-legacy
