@@ -11,7 +11,6 @@ echo "[1] Github Release [gh auth login]
 [5] Gofile
 [6] oshi.at
 [7] Sourceforge [Key]
-[8] Buzzheavier
 "
 read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
@@ -58,11 +57,4 @@ read -p "Please enter Username: " USER
 read -p "Please enter upload location:
 Note: Path after /home/frs/project/" UPL
 scp $FP "$USER"@frs.sourceforge.net:/home/frs/project/$UPL
-fi
-
-if [ $UP == 8 ]; then
-FN="$(basename $FP)"
-echo -e "Started uploading $FN on Buzzheavier..."
-BZUP=https://buzzheavier.com/f/$(curl -#o - -T "$FP" https://w.buzzheavier.com/t/$FN | cut -d : -f 2 | cut -d } -f 1 | grep -Po '[^"]*')
-echo $BZUP
 fi
